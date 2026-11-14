@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="生活记录台">
+<meta name="theme-color" content="#14161c">
+<title>生活记录台</title>
+<link rel="icon" id="favicon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%20width%3D%22128%22%20height%3D%22128%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22furG%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fff2f7%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffe0ec%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22earG%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ffd0e2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffb8d2%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22bgG%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fff3f8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffdcea%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22128%22%20height%3D%22128%22%20fill%3D%22url%28%23bgG%29%22%2F%3E%0A%20%20%3C%21--%20%E8%80%B3%E6%9C%B5%20--%3E%0A%20%20%3Cpath%20d%3D%22M30%2046%20L24%2014%20L56%2032%20Z%22%20fill%3D%22url%28%23earG%29%22%20stroke%3D%22%23e79dbd%22%20stroke-width%3D%223.4%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M98%2046%20L104%2014%20L72%2032%20Z%22%20fill%3D%22url%28%23earG%29%22%20stroke%3D%22%23e79dbd%22%20stroke-width%3D%223.4%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M35%2042%20L32%2024%20L49%2033%20Z%22%20fill%3D%22%23ff9ec0%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M93%2042%20L96%2024%20L79%2033%20Z%22%20fill%3D%22%23ff9ec0%22%2F%3E%0A%20%20%3C%21--%20%E5%A4%B4%20--%3E%0A%20%20%3Cellipse%20cx%3D%2264%22%20cy%3D%2268%22%20rx%3D%2242%22%20ry%3D%2237%22%20fill%3D%22url%28%23furG%29%22%20stroke%3D%22%23e79dbd%22%20stroke-width%3D%223.4%22%2F%3E%0A%20%20%3C%21--%20%E9%A2%9D%E5%A4%B4%E5%8F%91%E4%B8%9D%20--%3E%0A%20%20%3Cpath%20d%3D%22M58%2034%20q6%20-12%2012%20-2%22%20fill%3D%22none%22%20stroke%3D%22%23e79dbd%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3C%21--%20%E7%9C%BC%E7%9D%9B%20--%3E%0A%20%20%3Cellipse%20cx%3D%2249%22%20cy%3D%2266%22%20rx%3D%226.5%22%20ry%3D%227.5%22%20fill%3D%22%235a4250%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%2279%22%20cy%3D%2266%22%20rx%3D%226.5%22%20ry%3D%227.5%22%20fill%3D%22%235a4250%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2251.2%22%20cy%3D%2263.4%22%20r%3D%222.3%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2281.2%22%20cy%3D%2263.4%22%20r%3D%222.3%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3C%21--%20%E8%85%AE%E7%BA%A2%20--%3E%0A%20%20%3Cellipse%20cx%3D%2234%22%20cy%3D%2277%22%20rx%3D%227.5%22%20ry%3D%225%22%20fill%3D%22%23ffb3cd%22%20opacity%3D%22.85%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%2294%22%20cy%3D%2277%22%20rx%3D%227.5%22%20ry%3D%225%22%20fill%3D%22%23ffb3cd%22%20opacity%3D%22.85%22%2F%3E%0A%20%20%3C%21--%20%E9%BC%BB%E5%AD%90%20--%3E%0A%20%20%3Cpath%20d%3D%22M64%2076%20l5%200%20l-2.5%204.2%20Z%22%20fill%3D%22%23ff8fb3%22%2F%3E%0A%20%20%3C%21--%20%E5%98%B4%20--%3E%0A%20%20%3Cpath%20d%3D%22M64%2080%20q-4.5%206%20-9%201.5%20M64%2080%20q4.5%206%209%201.5%22%20fill%3D%22none%22%20stroke%3D%22%235a4250%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3C%21--%20%E8%83%A1%E9%A1%BB%20--%3E%0A%20%20%3Cg%20stroke%3D%22%23e79dbd%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M36%2060%20l-11%20-4%22%2F%3E%3Cpath%20d%3D%22M35%2068%20l-12%201%22%2F%3E%3Cpath%20d%3D%22M37%2076%20l-10%205%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M92%2060%20l11%20-4%22%2F%3E%3Cpath%20d%3D%22M93%2068%20l12%201%22%2F%3E%3Cpath%20d%3D%22M91%2076%20l10%205%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%20%20%3C%21--%20%E5%B0%8F%E5%9B%B4%E5%B7%BE%20--%3E%0A%20%20%3Cpath%20d%3D%22M44%2094%20q20%209%2040%200%20l-2%2011%20q-18%207%20-36%200%20Z%22%20fill%3D%22%238ec5ff%22%20stroke%3D%22%236ba7ea%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M78%20100%20l12%204%20l-4%2011%20l-11%20-5%20Z%22%20fill%3D%22%238ec5ff%22%20stroke%3D%22%236ba7ea%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%20width%3D%22128%22%20height%3D%22128%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22furG%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fff2f7%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffe0ec%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22earG%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ffd0e2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffb8d2%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22bgG%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fff3f8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffdcea%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22128%22%20height%3D%22128%22%20fill%3D%22url%28%23bgG%29%22%2F%3E%0A%20%20%3C%21--%20%E8%80%B3%E6%9C%B5%20--%3E%0A%20%20%3Cpath%20d%3D%22M30%2046%20L24%2014%20L56%2032%20Z%22%20fill%3D%22url%28%23earG%29%22%20stroke%3D%22%23e79dbd%22%20stroke-width%3D%223.4%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M98%2046%20L104%2014%20L72%2032%20Z%22%20fill%3D%22url%28%23earG%29%22%20stroke%3D%22%23e79dbd%22%20stroke-width%3D%223.4%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M35%2042%20L32%2024%20L49%2033%20Z%22%20fill%3D%22%23ff9ec0%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M93%2042%20L96%2024%20L79%2033%20Z%22%20fill%3D%22%23ff9ec0%22%2F%3E%0A%20%20%3C%21--%20%E5%A4%B4%20--%3E%0A%20%20%3Cellipse%20cx%3D%2264%22%20cy%3D%2268%22%20rx%3D%2242%22%20ry%3D%2237%22%20fill%3D%22url%28%23furG%29%22%20stroke%3D%22%23e79dbd%22%20stroke-width%3D%223.4%22%2F%3E%0A%20%20%3C%21--%20%E9%A2%9D%E5%A4%B4%E5%8F%91%E4%B8%9D%20--%3E%0A%20%20%3Cpath%20d%3D%22M58%2034%20q6%20-12%2012%20-2%22%20fill%3D%22none%22%20stroke%3D%22%23e79dbd%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3C%21--%20%E7%9C%BC%E7%9D%9B%20--%3E%0A%20%20%3Cellipse%20cx%3D%2249%22%20cy%3D%2266%22%20rx%3D%226.5%22%20ry%3D%227.5%22%20fill%3D%22%235a4250%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%2279%22%20cy%3D%2266%22%20rx%3D%226.5%22%20ry%3D%227.5%22%20fill%3D%22%235a4250%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2251.2%22%20cy%3D%2263.4%22%20r%3D%222.3%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2281.2%22%20cy%3D%2263.4%22%20r%3D%222.3%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3C%21--%20%E8%85%AE%E7%BA%A2%20--%3E%0A%20%20%3Cellipse%20cx%3D%2234%22%20cy%3D%2277%22%20rx%3D%227.5%22%20ry%3D%225%22%20fill%3D%22%23ffb3cd%22%20opacity%3D%22.85%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%2294%22%20cy%3D%2277%22%20rx%3D%227.5%22%20ry%3D%225%22%20fill%3D%22%23ffb3cd%22%20opacity%3D%22.85%22%2F%3E%0A%20%20%3C%21--%20%E9%BC%BB%E5%AD%90%20--%3E%0A%20%20%3Cpath%20d%3D%22M64%2076%20l5%200%20l-2.5%204.2%20Z%22%20fill%3D%22%23ff8fb3%22%2F%3E%0A%20%20%3C%21--%20%E5%98%B4%20--%3E%0A%20%20%3Cpath%20d%3D%22M64%2080%20q-4.5%206%20-9%201.5%20M64%2080%20q4.5%206%209%201.5%22%20fill%3D%22none%22%20stroke%3D%22%235a4250%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3C%21--%20%E8%83%A1%E9%A1%BB%20--%3E%0A%20%20%3Cg%20stroke%3D%22%23e79dbd%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M36%2060%20l-11%20-4%22%2F%3E%3Cpath%20d%3D%22M35%2068%20l-12%201%22%2F%3E%3Cpath%20d%3D%22M37%2076%20l-10%205%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M92%2060%20l11%20-4%22%2F%3E%3Cpath%20d%3D%22M93%2068%20l12%201%22%2F%3E%3Cpath%20d%3D%22M91%2076%20l10%205%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%20%20%3C%21--%20%E5%B0%8F%E5%9B%B4%E5%B7%BE%20--%3E%0A%20%20%3Cpath%20d%3D%22M44%2094%20q20%209%2040%200%20l-2%2011%20q-18%207%20-36%200%20Z%22%20fill%3D%22%238ec5ff%22%20stroke%3D%22%236ba7ea%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M78%20100%20l12%204%20l-4%2011%20l-11%20-5%20Z%22%20fill%3D%22%238ec5ff%22%20stroke%3D%22%236ba7ea%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="manifest" href="./manifest.webmanifest?v=3">
+<meta name="apple-mobile-web-app-title" content="生活记录">
+<meta name="application-name" content="生活记录">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#14161c">
+<meta name="format-detection" content="telephone=no">
+<style>
+  :root{
+    --bg:#14161c; --card:#1d2029; --card2:#262a35; --line:#313642;
+    --text:#eef1f6; --sub:#8b93a5; --accent:#8ba4ff; --accent2:#5f79f0;
+    --milk:#ffb86b; --bath:#5ec8f2; --hair:#c792ea; --food:#ff7a7a;
+    --sport:#5fd68a; --shop:#ffd166;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    padding-bottom:calc(140px + env(safe-area-inset-bottom));
+    max-width:520px;margin:0 auto;
+  }
+  /* ---------- 顶部 ---------- */
+  header{padding:18px 18px 4px;display:flex;align-items:center;gap:10px;}
+  header .logo{width:44px;height:44px;flex-shrink:0;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35));}
+  header .logo svg{width:100%;height:100%;display:block;border-radius:11px;}
+  header h1{font-size:1.4rem;font-weight:800;letter-spacing:.5px;}
+  header .date{color:var(--sub);font-size:.8rem;margin-top:3px;}
+  /* ---------- 首页卡片 ---------- */
+  .quick-hint{padding:2px 18px 0;color:var(--sub);font-size:.75rem;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 16px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:16px 14px;cursor:pointer;transition:transform .08s ease,border-color .15s;
+    position:relative;overflow:hidden;user-select:none;
+  }
+  .card:active{transform:scale(.96);}
+  .card .icon{font-size:1.7rem;line-height:1;}
+  .card .name{font-size:1rem;font-weight:600;margin-top:10px;}
+  .card .tag{font-size:.66rem;margin-top:5px;display:inline-block;padding:2px 8px;border-radius:99px;
+    background:rgba(255,255,255,.07);color:var(--sub);}
+  .card .last{font-size:.78rem;color:var(--sub);margin-top:6px;line-height:1.45;min-height:2.1em;}
+  .card .today-dot{
+    position:absolute;top:12px;right:12px;font-size:.68rem;
+    padding:3px 8px;border-radius:99px;font-weight:600;background:rgba(255,255,255,.06);
+  }
+  .tool-row{display:flex;gap:10px;padding:2px 16px 0;}
+  .tool-btn{
+    flex:1;padding:10px;border-radius:12px;background:var(--card);border:1px solid var(--line);
+    color:var(--sub);font-size:.78rem;cursor:pointer;font-family:inherit;
+  }
+  /* ---------- 通用记录条目 ---------- */
+  .h-item{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:12px 14px;margin-top:8px;display:flex;align-items:center;gap:12px;
+    border-left:4px solid var(--catc,#555);
+  }
+  .h-item .h-icon{font-size:1.25rem;width:36px;height:36px;border-radius:10px;
+    background:var(--card2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .h-item .h-main{flex:1;min-width:0;}
+  .h-item .h-title{font-size:.92rem;font-weight:600;}
+  .h-item .h-detail{font-size:.78rem;color:var(--sub);margin-top:3px;line-height:1.5;}
+  .h-item .h-time{font-size:.78rem;color:var(--sub);flex-shrink:0;}
+  .h-item .h-del{flex-shrink:0;color:#5a6274;font-size:1rem;padding:6px;border:none;background:none;cursor:pointer;}
+  .h-item .h-del:active{color:#ff7a7a;}
+  .empty{color:var(--sub);text-align:center;padding:40px 0;font-size:.85rem;}
+  /* ---------- 日历 ---------- */
+  .cal-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px 4px;}
+  .cal-head .cal-title{font-size:1.05rem;font-weight:700;}
+  .cal-nav{
+    background:var(--card);border:1px solid var(--line);color:var(--text);
+    width:36px;height:36px;border-radius:12px;font-size:1rem;cursor:pointer;font-family:inherit;
+  }
+  .cal-today-btn{
+    background:var(--card);border:1px solid var(--line);color:var(--sub);
+    padding:8px 12px;border-radius:12px;font-size:.78rem;cursor:pointer;font-family:inherit;
+  }
+  .cal-week{display:grid;grid-template-columns:repeat(7,1fr);padding:10px 14px 0;gap:4px;}
+  .cal-week span{text-align:center;font-size:.72rem;color:var(--sub);padding:4px 0;}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;padding:6px 14px 0;}
+  .cal-cell{
+    aspect-ratio:.82;border-radius:11px;padding:4px 2px;cursor:pointer;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+    border:1px solid transparent;transition:transform .08s;user-select:none;
+  }
+  .cal-cell:active{transform:scale(.93);}
+  .cal-cell.dim{opacity:.3;}
+  .cal-cell.has{background:var(--card);border-color:var(--line);}
+  .cal-cell.today{border-color:var(--accent2);}
+  .cal-cell.sel{background:var(--accent2);border-color:var(--accent2);}
+  .cal-cell.sel .cal-day{color:#fff;}
+  .cal-day{font-size:.82rem;font-weight:600;line-height:1;}
+  .cal-cell.today .cal-day{color:var(--accent);}
+  .cal-cell.sel.today .cal-day{color:#fff;}
+  .cal-dots{display:flex;gap:3px;flex-wrap:wrap;justify-content:center;max-width:100%;min-height:8px;}
+  .cal-dots i{width:7px;height:7px;border-radius:50%;display:block;}
+  .cal-legend{display:flex;flex-wrap:wrap;gap:10px;padding:12px 18px 0;}
+  .cal-legend span{font-size:.7rem;color:var(--sub);display:flex;align-items:center;gap:4px;}
+  .cal-legend i{width:8px;height:8px;border-radius:50%;display:inline-block;}
+  .cal-detail{padding:12px 16px 20px;}
+  .cal-detail-title{font-size:.85rem;font-weight:700;color:var(--sub);padding-bottom:2px;}
+  .quick-add{display:flex;gap:8px;margin:10px 0 6px;}
+  .quick-add button{
+    flex:1;font-size:1.25rem;padding:10px 0;background:var(--card);
+    border:1px solid var(--line);border-radius:12px;cursor:pointer;transition:transform .08s;font-family:inherit;
+  }
+  .quick-add button:active{transform:scale(.9);background:var(--card2);}
+  .quick-add-label{font-size:.72rem;color:var(--sub);margin-top:12px;}
+  /* ---------- 底部导航 ---------- */
+  nav{
+    position:fixed;bottom:0;left:0;right:0;max-width:520px;margin:0 auto;
+    background:rgba(20,22,28,.92);backdrop-filter:blur(14px);
+    border-top:1px solid var(--line);display:flex;
+    padding-bottom:env(safe-area-inset-bottom);z-index:50;
+  }
+  nav button{
+    flex:1;background:none;border:none;color:var(--sub);font-size:.72rem;
+    padding:9px 0 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;
+    position:relative;font-family:inherit;
+  }
+  nav button .n-ico{font-size:1.25rem;}
+  nav button.on{color:var(--accent);font-weight:600;}
+  nav .n-badge{
+    position:absolute;top:4px;right:calc(50% - 22px);width:8px;height:8px;border-radius:50%;
+    background:#ff6b6b;display:none;
+  }
+  /* ---------- 底部弹层表单 ---------- */
+  #sheetMask{
+    position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;
+    opacity:0;pointer-events:none;transition:opacity .2s;
+  }
+  #sheetMask.show{opacity:1;pointer-events:auto;}
+  #sheet{
+    position:absolute;left:0;right:0;bottom:0;max-width:520px;margin:0 auto;
+    background:#20242e;border-radius:22px 22px 0 0;padding:18px 18px calc(20px + env(safe-area-inset-bottom));
+    transform:translateY(100%);transition:transform .28s cubic-bezier(.32,.72,.35,1);
+    max-height:86vh;overflow-y:auto;
+  }
+  #sheetMask.show #sheet{transform:translateY(0);}
+  .sheet-title{font-size:1.05rem;font-weight:700;display:flex;align-items:center;gap:8px;}
+  .sheet-sub{font-size:.75rem;color:var(--sub);margin-top:4px;}
+  .f-row{margin-top:14px;}
+  .f-row label{display:block;font-size:.78rem;color:var(--sub);margin-bottom:6px;}
+  .f-row input,.f-row select,.f-row textarea{
+    width:100%;background:#171a21;border:1px solid var(--line);border-radius:12px;
+    padding:11px 12px;color:var(--text);font-size:.92rem;font-family:inherit;outline:none;
+  }
+  .f-row input:focus,.f-row select:focus,.f-row textarea:focus{border-color:var(--accent2);}
+  .f-hint{font-size:.72rem;color:var(--accent);margin-top:6px;min-height:1em;}
+  /* 常规选项 chips */
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px;}
+  .chip{
+    padding:7px 12px;border-radius:99px;font-size:.78rem;
+    background:#171a21;border:1px solid var(--line);color:var(--sub);
+    cursor:pointer;font-family:inherit;transition:all .15s;line-height:1.4;
+  }
+  .chip:active{transform:scale(.94);}
+  .chip.on{background:var(--accent2);border-color:var(--accent2);color:#fff;font-weight:600;}
+  .seg{display:flex;gap:8px;}
+  .seg button{
+    flex:1;padding:11px;border-radius:12px;background:#171a21;border:1px solid var(--line);
+    color:var(--sub);font-size:.9rem;cursor:pointer;font-family:inherit;
+  }
+  .seg button.on{background:var(--accent2);border-color:var(--accent2);color:#fff;font-weight:600;}
+  .sheet-btns{display:flex;gap:10px;margin-top:20px;}
+  .sheet-btns .cancel{
+    flex:1;padding:13px;border-radius:14px;background:#171a21;border:1px solid var(--line);
+    color:var(--sub);font-size:.95rem;cursor:pointer;font-family:inherit;
+  }
+  .sheet-btns .ok{
+    flex:2;padding:13px;border-radius:14px;background:var(--accent2);border:none;
+    color:#fff;font-size:.95rem;font-weight:700;cursor:pointer;font-family:inherit;
+  }
+  /* ---------- 冰箱 ---------- */
+  .fridge-scene{padding:8px 16px 20px;display:flex;flex-direction:column;align-items:center;}
+  .fridge-status{font-size:.78rem;color:var(--sub);margin:2px 0 12px;text-align:center;}
+  .fridge-status b{color:#ffd166;}
+  .fridge{
+    width:min(310px,84vw);height:540px;position:relative;perspective:1400px;cursor:pointer;
+  }
+  .fridge-inner{
+    position:absolute;inset:0;border-radius:26px;overflow:hidden;
+    background:linear-gradient(180deg,#dceef8 0%,#cfe6f3 36%,#eef6fb 36.5%,#e6f1f8 100%);
+    border:7px solid #fbfdff;
+    box-shadow:inset 0 0 34px rgba(60,110,150,.18), 0 18px 40px rgba(0,0,0,.45);
+    display:flex;flex-direction:column;
+  }
+  .zone{display:flex;flex-direction:column;min-height:0;}
+  .zone.freezer{height:36%;}
+  .zone.cold{flex:1;}
+  .zone-label{
+    font-size:.72rem;font-weight:700;color:#4d7fa3;letter-spacing:2px;
+    padding:8px 12px 4px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;
+  }
+  .zone-label .cnt{font-weight:400;color:#7fa4be;letter-spacing:0;}
+  .shelf{
+    flex:1;overflow-y:auto;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;
+    padding:6px 12px 12px;scrollbar-width:thin;
+  }
+  .zone.freezer .shelf{border-bottom:3px solid rgba(120,165,195,.35);}
+  .zone-empty{width:100%;text-align:center;color:#8fb0c6;font-size:.72rem;padding:14px 0;}
+  /* 贴纸 */
+  .sticker{
+    width:82px;background:#fffdf5;border-radius:10px;padding:12px 4px 7px;
+    text-align:center;position:relative;box-shadow:0 3px 7px rgba(40,70,100,.22);
+    transform:rotate(var(--rot,0deg));cursor:pointer;transition:transform .15s;
+  }
+  .sticker:active{transform:rotate(var(--rot,0deg)) scale(.92);}
+  .sticker::before{
+    content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%) rotate(-3deg);
+    width:36px;height:13px;background:var(--tape,rgba(255,222,130,.9));
+    border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.12);
+  }
+  .sticker svg{width:42px;height:42px;display:block;margin:0 auto;}
+  .sticker .s-name{
+    font-size:.68rem;color:#574f45;font-weight:700;margin-top:4px;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 2px;
+  }
+  .sticker .s-exp{font-size:.58rem;color:#9a9083;margin-top:2px;}
+  .sticker .s-days{font-size:.6rem;margin-top:3px;display:inline-block;padding:1px 7px;border-radius:99px;font-weight:700;}
+  .s-days.ok{background:#e3f4e4;color:#2f7d44;}
+  .s-days.warn{background:#fff2cf;color:#a97b0a;}
+  .s-days.bad{background:#ffdfe0;color:#c33;}
+  .s-days.frozen{background:#dceeff;color:#2f6ba3;}
+  /* 冰箱门 */
+  .door{
+    position:absolute;left:0;width:100%;z-index:6;cursor:pointer;
+    background:linear-gradient(135deg,#ffe9f1 0%,#ffd9e7 60%,#ffcfe0 100%);
+    border:7px solid #fff;
+    transition:transform .85s cubic-bezier(.55,.06,.25,1);
+    transform-origin:left center;backface-visibility:hidden;
+    box-shadow:0 14px 34px rgba(0,0,0,.4);
+  }
+  .door.top{top:0;height:36%;border-radius:26px 26px 12px 12px;}
+  .door.bottom{top:36%;height:64%;border-radius:12px 12px 26px 26px;}
+  .fridge.open .door{transform:rotateY(-112deg);pointer-events:none;box-shadow:none;}
+  .door .handle{
+    position:absolute;right:14px;width:9px;border-radius:99px;
+    background:linear-gradient(180deg,#fff,#f0dbe4);box-shadow:1px 2px 4px rgba(0,0,0,.15);
+  }
+  .door.top .handle{top:26%;height:48%;}
+  .door.bottom .handle{top:10%;height:26%;}
+  .magnet{
+    position:absolute;width:26px;height:26px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:.85rem;
+    box-shadow:0 2px 4px rgba(0,0,0,.18);
+  }
+  .door-face{position:absolute;left:26px;bottom:26%;}
+  .door-face .eyes{display:flex;gap:26px;}
+  .door-face .eyes i{width:9px;height:12px;border-radius:50%;background:#5a4a52;display:block;}
+  .door-face .blush{display:flex;gap:38px;margin-top:-4px;margin-left:-9px;}
+  .door-face .blush i{width:13px;height:7px;border-radius:50%;background:rgba(255,140,160,.55);display:block;}
+  .door-face .mouth{
+    width:14px;height:8px;border:2.5px solid #5a4a52;border-top:none;
+    border-radius:0 0 12px 12px;margin:2px 0 0 13px;
+  }
+  .door-note{
+    position:absolute;left:20px;top:16px;background:#fffbe8;color:#8a7a4a;
+    font-size:.62rem;font-weight:700;padding:5px 8px;border-radius:4px;transform:rotate(-4deg);
+    box-shadow:0 2px 4px rgba(0,0,0,.15);
+  }
+  .door-hint{
+    position:absolute;bottom:14px;left:0;right:0;text-align:center;
+    font-size:.68rem;color:#a06c80;font-weight:600;
+  }
+  .cat-sticker{
+    position:absolute;right:16px;bottom:22px;width:54px;height:54px;
+    background:#fffdf5;border-radius:9px;padding:3px;
+    transform:rotate(6deg);box-shadow:0 3px 7px rgba(0,0,0,.16);
+  }
+  .cat-sticker svg{width:100%;height:100%;display:block;}
+  .fridge-feet{display:flex;justify-content:space-between;width:min(240px,64vw);margin-top:-2px;}
+  .fridge-feet i{width:20px;height:12px;background:#3a3f4b;border-radius:0 0 6px 6px;display:block;}
+  .fridge-btns{display:flex;gap:10px;margin-top:18px;width:min(310px,84vw);}
+  .fridge-btns button{
+    flex:1;padding:12px;border-radius:14px;font-size:.88rem;font-weight:700;
+    cursor:pointer;font-family:inherit;border:1px solid var(--line);
+  }
+  .fridge-btns .add{background:var(--accent2);color:#fff;border:none;}
+  .fridge-btns .toggle{background:var(--card);color:var(--sub);}
+  /* ---------- Toast ---------- */
+  #toast{
+    position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);
+    background:#2a3a2e;border:1px solid #3d5a44;color:#8fe0a8;padding:10px 20px;
+    border-radius:99px;font-size:.85rem;font-weight:600;z-index:300;
+    transition:transform .3s cubic-bezier(.32,.72,.35,1);pointer-events:none;white-space:nowrap;
+    max-width:92vw;overflow:hidden;text-overflow:ellipsis;
+  }
+  #toast.show{transform:translateX(-50%) translateY(0);}
+  /* ---------- 添加到主屏幕引导 ---------- */
+  #a2hs{
+    position:fixed;left:12px;right:12px;bottom:calc(78px + env(safe-area-inset-bottom));
+    max-width:496px;margin:0 auto;z-index:45;
+    background:linear-gradient(135deg,#2a2440,#1d2436);border:1px solid #3d4460;
+    border-radius:16px;padding:11px 13px;display:none;align-items:center;gap:10px;
+    box-shadow:0 8px 26px rgba(0,0,0,.5);
+    animation:a2hsIn .35s cubic-bezier(.32,.72,.35,1);
+  }
+  @keyframes a2hsIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  #a2hs.show{display:flex;}
+  #a2hs .a-ico{font-size:1.5rem;flex-shrink:0;}
+  #a2hs .a-txt{flex:1;min-width:0;font-size:.78rem;color:var(--sub);line-height:1.5;}
+  #a2hs .a-txt b{color:var(--text);display:block;font-size:.85rem;}
+  #a2hs button{
+    flex-shrink:0;background:var(--accent2);border:none;color:#fff;font-size:.78rem;
+    font-weight:700;padding:9px 13px;border-radius:11px;cursor:pointer;font-family:inherit;
+  }
+  #a2hs .a-x{background:none;color:var(--sub);font-size:1.1rem;padding:4px 6px;}
+</style>
+</head>
+<body>
+
+<!-- 手绘滤镜（给贴纸涂鸦用） -->
+<svg width="0" height="0" style="position:absolute">
+  <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" result="n"/>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
+</svg>
+
+<header>
+  <span class="logo" id="logoBox"></span>
+  <div>
+    <h1>生活记录台</h1>
+    <div class="date" id="todayStr"></div>
+  </div>
+</header>
+
+<!-- 首页 -->
+<section id="page-home">
+  <div class="quick-hint">🛁🧴 洗澡洗头点一下就好 · 其余点开填详情 · 补记去「日历」</div>
+  <div class="grid" id="cardGrid"></div>
+  <div class="tool-row">
+    <button class="tool-btn" id="exportBtn">📤 导出数据 (JSON)</button>
+    <button class="tool-btn" id="importBtn">📥 导入数据</button>
+    <input type="file" id="importFile" accept=".json" style="display:none">
+  </div>
+  <div class="tool-row" style="padding-bottom:4px">
+    <button class="tool-btn" id="fixIconBtn">🐱 修复桌面图标</button>
+    <button class="tool-btn" id="resetAppBtn">🧹 清空缓存重置</button>
+  </div>
+</section>
+
+<!-- 日历页 -->
+<section id="page-calendar" style="display:none">
+  <div class="cal-head">
+    <button class="cal-nav" id="calPrev">‹</button>
+    <div class="cal-title" id="calTitle"></div>
+    <div style="display:flex;gap:8px;">
+      <button class="cal-today-btn" id="calTodayBtn">今天</button>
+      <button class="cal-nav" id="calNext">›</button>
+    </div>
+  </div>
+  <div class="cal-week"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+  <div class="cal-grid" id="calGrid"></div>
+  <div class="cal-legend" id="calLegend"></div>
+  <div class="cal-detail" id="calDetail"></div>
+</section>
+
+<!-- 冰箱页 -->
+<section id="page-fridge" style="display:none">
+  <div class="fridge-scene">
+    <div class="fridge-status" id="fridgeStatus"></div>
+    <div class="fridge" id="fridge">
+      <div class="fridge-inner">
+        <div class="zone freezer">
+          <div class="zone-label">❄️ 冷 冻<span class="cnt" id="fzCount"></span></div>
+          <div class="shelf" id="fzShelf"></div>
+        </div>
+        <div class="zone cold">
+          <div class="zone-label">🧊 冷 藏<span class="cnt" id="cdCount"></span></div>
+          <div class="shelf" id="cdShelf"></div>
+        </div>
+      </div>
+      <div class="door top" id="doorTop">
+        <div class="handle"></div>
+        <div class="magnet" style="left:18px;top:16px;background:#ffe08a;">⭐</div>
+        <div class="magnet" style="left:56px;top:44px;background:#a8e6cf;">🍀</div>
+        <div class="door-note">记得关好门～</div>
+      </div>
+      <div class="door bottom" id="doorBottom">
+        <div class="handle"></div>
+        <div class="door-face">
+          <div class="eyes"><i></i><i></i></div>
+          <div class="blush"><i></i><i></i></div>
+          <div class="mouth"></div>
+        </div>
+        <div class="cat-sticker">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 22 L10 6 L26 16 Z" fill="#ffd0e2" stroke="#e79dbd" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M50 22 L54 6 L38 16 Z" fill="#ffd0e2" stroke="#e79dbd" stroke-width="2.6" stroke-linejoin="round"/>
+            <ellipse cx="32" cy="36" rx="22" ry="19" fill="#fff2f7" stroke="#e79dbd" stroke-width="2.6"/>
+            <circle cx="24" cy="34" r="3" fill="#5a4250"/><circle cx="40" cy="34" r="3" fill="#5a4250"/>
+            <circle cx="25.2" cy="32.6" r="1.1" fill="#fff"/><circle cx="41.2" cy="32.6" r="1.1" fill="#fff"/>
+            <path d="M32 40 l2.6 0 l-1.3 2.2 Z" fill="#ff8fb3"/>
+            <path d="M32 42 q-2.4 3 -4.8 .8 M32 42 q2.4 3 4.8 .8" fill="none" stroke="#5a4250" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="door-hint" id="doorHint">👆 点我打开冰箱</div>
+      </div>
+    </div>
+    <div class="fridge-feet"><i></i><i></i></div>
+    <div class="fridge-btns">
+      <button class="add" id="addFoodBtn">＋ 放入食物</button>
+      <button class="toggle" id="toggleDoorBtn">开门 / 关门</button>
+    </div>
+  </div>
+</section>
+
+<!-- 底部导航 -->
+<nav>
+  <button id="navHome" class="on"><span class="n-ico">🏠</span>记录</button>
+  <button id="navCalendar"><span class="n-ico">📅</span>日历</button>
+  <button id="navFridge"><span class="n-ico">🧊</span>冰箱<span class="n-badge" id="fridgeBadge"></span></button>
+</nav>
+
+<!-- 底部弹层 -->
+<div id="sheetMask">
+  <div id="sheet">
+    <div class="sheet-title" id="sheetTitle"></div>
+    <div class="sheet-sub" id="sheetSub"></div>
+    <div id="sheetBody"></div>
+    <div class="sheet-btns">
+      <button class="cancel" id="sheetCancel">取消</button>
+      <button class="ok" id="sheetOk">记下 ✓</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<!-- 添加到主屏幕引导 -->
+<div id="a2hs">
+  <span class="a-ico">🐱</span>
+  <div class="a-txt">
+    <b>添加到主屏幕</b>
+    <span id="a2hsTip">像小程序一样全屏使用，图标是只小猫 🐾</span>
+  </div>
+  <button id="a2hsGo">添加</button>
+  <button class="a-x" id="a2hsX">✕</button>
+</div>
+
+<script>
+/* ================= 数据层 ================= */
+const LS_KEY = 'lifeLog.v2';
+const CATS = {
+  bath:  {name:'洗澡',    icon:'🛁', color:'#5ec8f2', quick:true},
+  hair:  {name:'洗头',    icon:'🧴', color:'#c792ea', quick:true},
+  milk:  {name:'喝奶茶',  icon:'🧋', color:'#ffb86b', fields:[
+    {k:'brand', label:'品牌', ph:'如：喜茶 / 蜜雪冰城', presets:['喜茶','奈雪的茶','蜜雪冰城','古茗','茶百道','沪上阿姨','霸王茶姬','CoCo 都可','书亦烧仙草','甜啦啦','咖啡店']},
+    {k:'type',  label:'种类', ph:'如：珍珠奶茶', presets:['珍珠奶茶','芋泥啵啵','芋圆奶茶','杨枝甘露','芝士莓莓','柠檬茶','水果茶','纯茶','厚乳','抹茶','生椰拿铁','美式咖啡']},
+    {k:'slot',  label:'时段', ph:'如：下午茶', presets:['早餐','上午','午餐','下午茶','傍晚','晚餐后','睡前']},
+  ]},
+  food:  {name:'外出吃饭',icon:'🍜', color:'#ff7a7a', fields:[
+    {k:'kind',  label:'类型', ph:'如：火锅', presets:['火锅','日料','韩餐','西餐','川菜','粤菜','湘菜','家常菜','面馆','米线','烧烤','快餐','小吃','甜品店','咖啡店','自助餐']},
+    {k:'place', label:'饭店名', ph:'如：海底捞', presets:['海底捞','小肥羊','呷哺呷哺','肯德基','麦当劳','星巴克','瑞幸','喜家德','和府捞面','沙县小吃','必胜客','汉堡王','奈雪','海底捞(自己家附近)']},
+    {k:'dish',  label:'菜品', ph:'如：毛肚、虾滑', presets:['火锅','烤肉','面条','米饭套餐','沙拉','炒饭','寿司','刺身','炸鸡','汉堡','火锅菜','甜点','小菜','汤']},
+    {k:'slot',  label:'时段', ph:'如：午餐', presets:['早餐','上午','午餐','下午茶','晚餐','夜宵']},
+  ]},
+  sport: {name:'运动',    icon:'🏃', color:'#5fd68a', fields:[
+    {k:'type',  label:'种类', ph:'如：跑步', presets:['跑步','快走','健身','撸铁','瑜伽','普拉提','游泳','骑行','跳操','爬山','羽毛球','篮球','乒乓球','拉伸','拉伸放松','爬楼梯','舞蹈']},
+    {k:'dur',   label:'时长（分钟）', ph:'如：30', type:'number', presets:['10','15','20','30','45','60','90','120']},
+    {k:'slot',  label:'时段', ph:'如：傍晚', presets:['清晨','上午','午后','傍晚','夜间','睡前','周末']},
+  ]},
+  shop:  {name:'逛超市',  icon:'🛒', color:'#ffd166', fields:[
+    {k:'store', label:'超市名称', ph:'如：盒马', presets:['盒马','山姆','永辉超市','沃尔玛','大润发','家乐福','菜市场','便利店','叮咚买菜','美团买菜','Costco','华润万家','小超市']},
+    {k:'kind',  label:'采购类型', ph:'如：生鲜蔬果', presets:['生鲜蔬果','肉禽蛋','海鲜','乳品','烘焙','粮油调味','零食','饮料','速冻食品','日用百货','洗护清洁','母婴','宠物']},
+    {k:'items', label:'购买物品', ph:'如：牛奶、鸡蛋', presets:['牛奶','酸奶','鸡蛋','面包','水果','蔬菜','猪肉','牛肉','鸡肉','虾','饮料','零食','纸巾','洗衣液','牙膏','冰淇淋','速冻饺子','鸡蛋(盒)']},
+    {k:'slot',  label:'时段', ph:'如：傍晚', presets:['上午','中午','下午','傍晚','下班后','周末补货']},
+  ]},
+};
+
+function migrate(){
+  try{
+    const v2 = JSON.parse(localStorage.getItem(LS_KEY));
+    if(v2 && Array.isArray(v2.events)) return v2;
+  }catch(e){}
+  // 从旧版本迁移
+  try{
+    const v1 = JSON.parse(localStorage.getItem('lifeLog.v1'));
+    if(v1 && Array.isArray(v1.events)) return {events:v1.events, fridge:[]};
+  }catch(e){}
+  return {events:[], fridge:[]};
+}
+let DB = migrate();
+function save(){ localStorage.setItem(LS_KEY, JSON.stringify(DB)); updateFridgeBadge(); }
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+
+/* ================= 工具 ================= */
+const $ = s => document.querySelector(s);
+const pad = n => String(n).padStart(2,'0');
+function fmtTime(ts){ const d=new Date(ts); return `${pad(d.getHours())}:${pad(d.getMinutes())}`; }
+function fmtDate(ts){ const d=new Date(ts); return `${d.getMonth()+1}月${d.getDate()}日`; }
+function fmtDateY(ts){
+  const d=new Date(ts), n=new Date();
+  return d.getFullYear()!==n.getFullYear() ? `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日` : fmtDate(ts);
+}
+function fmtYMD(ts){ const d=new Date(ts); return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; }
+/* 解析 <input type="date"> 的值（兼容 yyyy-mm-dd 与 mm/dd/yyyy） */
+function parseYMD(str, endOfDay){
+  if(!str) return null;
+  let y, m, d;
+  const s = String(str).trim();
+  if(/^\d{4}-\d{1,2}-\d{1,2}$/.test(s)){
+    [y,m,d] = s.split('-').map(Number);
+  }else{
+    const p = s.split(/[/-]/).map(Number);
+    if(p.length!==3) return null;
+    if(p[0] > 12){ [y,m,d] = p; }        // 已经是 y-m-d
+    else { [m,d,y] = p; }                // m/d/y
+  }
+  if(!y||!m||!d) return null;
+  return endOfDay ? new Date(y, m-1, d, 23,59,59,999).getTime()
+                  : new Date(y, m-1, d, 12,0,0).getTime();
+}
+function dayStart(ts){ const d=new Date(ts); return new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime(); }
+function isSameDay(a,b){ return dayStart(a)===dayStart(b); }
+function ago(ts){
+  const m = Math.floor((Date.now()-ts)/60000);
+  if(m<1) return '刚刚';
+  if(m<60) return `${m} 分钟前`;
+  const h = Math.floor(m/60);
+  if(h<24) return `${h} 小时前`;
+  const d = Math.floor(h/24);
+  return d===1 ? '昨天' : `${d} 天前`;
+}
+function toast(msg){
+  const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._timer); t._timer = setTimeout(()=>t.classList.remove('show'), 1800);
+}
+function esc(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function detailText(e){
+  const d = e.data || {};
+  switch(e.cat){
+    case 'milk':  return [d.brand, d.type, d.slot].filter(Boolean).join(' · ');
+    case 'food':  return [d.kind, d.place, d.dish, d.slot].filter(Boolean).join(' · ');
+    case 'sport': return [d.type, d.dur && d.dur+' 分钟', d.slot].filter(Boolean).join(' · ');
+    case 'shop':  return [d.store, d.kind, d.items, d.slot].filter(Boolean).join(' · ');
+    default: return '';
+  }
+}
+function makeEventItem(e, onDel){
+  const c = CATS[e.cat];
+  const det = detailText(e);
+  const item = document.createElement('div');
+  item.className = 'h-item';
+  item.style.setProperty('--catc', c.color);
+  item.innerHTML = `
+    <div class="h-icon">${c.icon}</div>
+    <div class="h-main">
+      <div class="h-title" style="color:${c.color}">${c.name}</div>
+      ${det ? `<div class="h-detail">${esc(det)}</div>` : ''}
+    </div>
+    <div class="h-time">${fmtTime(e.ts)}</div>
+    <button class="h-del" title="删除">✕</button>`;
+  item.querySelector('.h-del').onclick = ()=>{
+    if(confirm('删除这条记录？')){
+      DB.events = DB.events.filter(x=>x.id!==e.id);
+      save(); onDel(); toast('已删除');
+    }
+  };
+  return item;
+}
+
+/* ================= 底部弹层 ================= */
+let sheetSubmit = null;
+function openSheet(title, sub, bodyHTML, onOk, okText){
+  $('#sheetTitle').textContent = title;
+  $('#sheetSub').textContent = sub || '';
+  $('#sheetBody').innerHTML = bodyHTML;
+  sheetSubmit = onOk;
+  $('#sheetOk').textContent = okText || '记下 ✓';
+  $('#sheetMask').classList.add('show');
+}
+function closeSheet(){ $('#sheetMask').classList.remove('show'); sheetSubmit = null; }
+$('#sheetMask').addEventListener('click', e=>{ if(e.target.id==='sheetMask') closeSheet(); });
+$('#sheetCancel').onclick = closeSheet;
+$('#sheetOk').onclick = ()=>{ if(sheetSubmit) sheetSubmit(); };
+
+/* 详细记录表单（奶茶/吃饭/运动/超市），带常规选项 chips */
+/* 时段 → 对应的具体时刻（选时段即决定这条记录发生在几点） */
+const SLOT_TIME = {
+  '清晨':'06:30','早餐':'08:00','上午':'10:00','中午':'12:00','午餐':'12:00',
+  '午后':'14:00','下午':'16:00','下午茶':'15:30','傍晚':'18:00','晚餐':'18:30',
+  '晚餐后':'20:00','晚上':'20:00','夜间':'21:00','深夜':'22:00','睡前':'22:30',
+  '夜宵':'22:00','下班后':'19:00','周末':'10:00','周末补货':'10:30',
+};
+function openDetailForm(cat, ts){
+  const c = CATS[cat];
+  const isToday = isSameDay(ts, Date.now());
+  const d = new Date(ts);
+  const rows = c.fields.map(f=>{
+    const chips = f.presets && f.presets.length ? `
+      <div class="chips" data-chips="${f.k}">
+        ${f.presets.map(p=>`<button type="button" class="chip" data-v="${esc(p)}">${esc(p)}</button>`).join('')}
+      </div>` : '';
+    return `
+    <div class="f-row">
+      <label>${f.label}</label>
+      <input id="f_${f.k}" type="${f.type||'text'}" placeholder="${f.ph}" ${f.type==='number'?'min="1" inputmode="numeric"':''}>
+      ${chips}
+    </div>`;
+  }).join('');
+
+  openSheet(`${c.icon} ${c.name}`, isToday ? '记录现在这一刻' : `补记 ${d.getMonth()+1}月${d.getDate()}日`,
+    rows, ()=>{
+      const data = {};
+      for(const f of c.fields){
+        const v = $('#f_'+f.k).value.trim();
+        if(v) data[f.k] = v;
+      }
+      // 记录时刻：今天取当前时间；补记过去按所选时段折算到那一天
+      let when;
+      if(isToday){
+        when = Date.now();
+      }else{
+        const t = SLOT_TIME[data.slot] || '12:00';
+        const p = t.split(':').map(Number);
+        when = dayStart(ts) + (p[0]*60+p[1])*60000;
+      }
+      DB.events.push({id:uid(), cat, ts:when, data});
+      save(); closeSheet(); refreshAll();
+      toast(`${c.icon} ${c.name} 已记下 ✓`);
+    });
+
+  // chips 点击 → 填入输入框（再次点击取消）
+  document.querySelectorAll('#sheetBody .chips').forEach(box=>{
+    box.addEventListener('click', e=>{
+      const b = e.target.closest('.chip'); if(!b) return;
+      const key = box.dataset.chips;
+      const input = $('#f_'+key);
+      if(!input) return;
+      const on = b.classList.contains('on');
+      if(input.dataset.multi){                       // 多选字段（购买物品/菜品）
+        if(on){ b.classList.remove('on'); }
+        else { b.classList.add('on'); }
+        const picked = [...box.querySelectorAll('.chip.on')].map(x=>x.dataset.v);
+        input.value = picked.join('、');
+      }else{
+        if(on){ b.classList.remove('on'); input.value=''; }
+        else{
+          box.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+          b.classList.add('on');
+          input.value = b.dataset.v;
+        }
+      }
+      input.dispatchEvent(new Event('input'));
+    });
+  });
+  // 多选字段标记
+  for(const f of c.fields){
+    if(f.k==='dish' || f.k==='items'){ const i=$('#f_'+f.k); if(i) i.dataset.multi='1'; }
+  }
+}
+
+/* ================= 首页 ================= */
+function lastOf(cat){
+  return DB.events.filter(e=>e.cat===cat).sort((a,b)=>b.ts-a.ts)[0] || null;
+}
+function renderHome(){
+  $('#todayStr').textContent = new Date().toLocaleDateString('zh-CN',{month:'long',day:'numeric',weekday:'long'});
+  const grid = $('#cardGrid');
+  grid.innerHTML = '';
+  for(const key of Object.keys(CATS)){
+    const c = CATS[key];
+    const last = lastOf(key);
+    const todayCount = DB.events.filter(e=>e.cat===key && isSameDay(e.ts, Date.now())).length;
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.style.borderTop = `3px solid ${c.color}`;
+    el.innerHTML = `
+      ${todayCount ? `<span class="today-dot" style="color:${c.color}">今天 ×${todayCount}</span>` : ''}
+      <div class="icon">${c.icon}</div>
+      <div class="name">${c.name}</div>
+      <span class="tag">${c.quick ? '⚡ 点一下直接记' : '📝 点开填详情'}</span>
+      <div class="last">${last ? `上次 <b style="color:${c.color}">${ago(last.ts)}</b><br>${fmtDate(last.ts)} ${fmtTime(last.ts)}` : '还没有记录'}</div>`;
+    el.onclick = ()=>{
+      if(c.quick){
+        DB.events.push({id:uid(), cat:key, ts:Date.now(), data:{}});
+        save(); renderHome(); toast(`${c.icon} ${c.name} +1`);
+      }else{
+        openDetailForm(key, Date.now());
+      }
+    };
+    grid.appendChild(el);
+  }
+}
+
+/* ================= 日历页 ================= */
+let calYear, calMonth, selDay;
+(function(){
+  const n = new Date();
+  calYear = n.getFullYear(); calMonth = n.getMonth();
+  selDay = dayStart(Date.now());
+})();
+
+function eventsByDay(){
+  const map = {};
+  for(const e of DB.events){
+    const k = dayStart(e.ts);
+    (map[k] = map[k] || []).push(e);
+  }
+  return map;
+}
+
+function renderCalendar(){
+  $('#calTitle').textContent = `${calYear}年${calMonth+1}月`;
+  const grid = $('#calGrid');
+  grid.innerHTML = '';
+  const map = eventsByDay();
+  const todayStart = dayStart(Date.now());
+  const first = new Date(calYear, calMonth, 1);
+  const offset = (first.getDay()+6)%7;
+  const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+  const prevDays = new Date(calYear, calMonth, 0).getDate();
+
+  const mkCell = (dayNum, y, m, dim)=>{
+    const dStart = new Date(y,m,dayNum).getTime();
+    const cell = document.createElement('div');
+    const evts = map[dStart] || [];
+    cell.className = 'cal-cell'
+      + (dim?' dim':'') + (evts.length?' has':'')
+      + (dStart===todayStart?' today':'') + (dStart===selDay?' sel':'');
+    // 每个类别一个颜色点，直观看出这天做了什么
+    const cats = [...new Set(evts.map(e=>e.cat))];
+    const dots = cats.map(k=>`<i style="background:${CATS[k].color}"></i>`).join('');
+    cell.innerHTML = `<span class="cal-day">${dayNum}</span><span class="cal-dots">${dots}</span>`;
+    cell.onclick = ()=>{
+      selDay = dStart;
+      if(dim){ calYear = y; calMonth = m; }
+      renderCalendar();
+    };
+    grid.appendChild(cell);
+  };
+  for(let i=offset-1;i>=0;i--){
+    const pm = calMonth===0?11:calMonth-1, py = calMonth===0?calYear-1:calYear;
+    mkCell(prevDays-i, py, pm, true);
+  }
+  for(let d=1; d<=daysInMonth; d++) mkCell(d, calYear, calMonth, false);
+  const trail = (7-(offset+daysInMonth)%7)%7;
+  for(let d=1; d<=trail; d++){
+    const nm = calMonth===11?0:calMonth+1, ny = calMonth===11?calYear+1:calYear;
+    mkCell(d, ny, nm, true);
+  }
+
+  // 图例
+  $('#calLegend').innerHTML = Object.keys(CATS)
+    .map(k=>`<span><i style="background:${CATS[k].color}"></i>${CATS[k].name}</span>`).join('');
+
+  renderCalDetail(map);
+}
+
+function renderCalDetail(map){
+  map = map || eventsByDay();
+  const wrap = $('#calDetail');
+  const evts = (map[selDay]||[]).sort((a,b)=>a.ts-b.ts);
+  const d = new Date(selDay);
+  const isToday = isSameDay(selDay, Date.now());
+  const label = isToday ? '今天' : `${d.getMonth()+1}月${d.getDate()}日 周${'日一二三四五六'[d.getDay()]}`;
+  wrap.innerHTML = `<div class="cal-detail-title">${label}${evts.length?' · '+evts.length+' 条':''}</div>`;
+
+  const addLabel = document.createElement('div');
+  addLabel.className = 'quick-add-label';
+  addLabel.textContent = '给这一天加记录（🛁🧴 一键直记，其余填详情）：';
+  wrap.appendChild(addLabel);
+  const addRow = document.createElement('div');
+  addRow.className = 'quick-add';
+  for(const key of Object.keys(CATS)){
+    const b = document.createElement('button');
+    b.textContent = CATS[key].icon;
+    b.title = CATS[key].name;
+    b.onclick = ()=>{
+      if(CATS[key].quick){
+        const ts = isToday ? Date.now() : selDay + 12*3600*1000;
+        DB.events.push({id:uid(), cat:key, ts, data:{}});
+        save(); renderCalendar(); renderHome();
+        toast(`${CATS[key].icon} ${CATS[key].name} +1`);
+      }else{
+        openDetailForm(key, selDay);
+        // 表单提交后刷新日历
+        const oldOk = $('#sheetOk').onclick;
+      }
+    };
+    addRow.appendChild(b);
+  }
+  wrap.appendChild(addRow);
+
+  if(!evts.length){
+    const empty = document.createElement('div');
+    empty.className = 'empty';
+    empty.style.padding = '24px 0';
+    empty.textContent = '这一天还没有记录 🌱';
+    wrap.appendChild(empty);
+    return;
+  }
+  for(const e of evts){
+    wrap.appendChild(makeEventItem(e, ()=>{ renderCalendar(); renderHome(); }));
+  }
+}
+
+$('#calPrev').onclick = ()=>{ calMonth--; if(calMonth<0){calMonth=11;calYear--;} renderCalendar(); };
+$('#calNext').onclick = ()=>{ calMonth++; if(calMonth>11){calMonth=0;calYear++;} renderCalendar(); };
+$('#calTodayBtn').onclick = ()=>{
+  const n = new Date();
+  calYear = n.getFullYear(); calMonth = n.getMonth(); selDay = dayStart(Date.now());
+  renderCalendar();
+};
+
+/* ================= 冰箱页 ================= */
+/* 关键词 → 手绘涂鸦 + 建议保质期（天）：[正则, 涂鸦key, 冷藏天, 冷冻天] */
+const FOOD_RULES = [
+  [/鲜奶|牛奶|纯奶|牛奶箱|奶箱/,    'milk',     7,  30],
+  [/酸奶|酸奶盒/,                   'milk',    14,  30],
+  [/奶/,                        'milk',     7,  30],
+  [/鸡蛋|鸭蛋|鹌鹑蛋/,           'egg',     30,  90],
+  [/蛋/,                        'egg',     30,  90],
+  [/苹果/,                      'apple',   14,  60],
+  [/香蕉/,                      'banana',   3,  30],
+  [/草莓/,                      'straw',    3,  30],
+  [/西瓜/,                      'melon',    4,  30],
+  [/橙|橘|柑/,                  'orange',  10,  60],
+  [/葡萄|提子/,                 'fruit',    5,  30],
+  [/桃|梨|李|杏|猕猴桃|火龙果|芒果|水果/, 'fruit', 7, 30],
+  [/排骨|牛肉|猪肉|羊肉|鸡肉|鸡翅|鸡腿|牛排|火腿|培根|香肠|肉末|肉/, 'meat', 2, 90],
+  [/虾|蟹|贝|海鲜/,             'fish',     1,  60],
+  [/鱼/,                        'fish',     1,  60],
+  [/西兰花|花菜|白菜|生菜|菠菜|青菜|油麦|芹|韭菜|蔬菜|菜心/, 'veg', 4, 30],
+  [/番茄|西红柿/,               'veg',      5,  30],
+  [/黄瓜|萝卜|土豆|洋葱|南瓜|茄子|椒|菇|玉米|葱|姜|蒜/, 'veg', 6, 30],
+  [/可乐|雪碧|汽水|苏打/,        'drink',   90, 90],
+  [/果汁|椰汁|茶饮|饮料/,        'drink',   30, 60],
+  [/啤|酒/,                     'drink',   90, 90],
+  [/冰淇淋|雪糕|冰棍|冰激凌/,     'icecream', 3, 90],
+  [/面包|吐司/,                 'bread',    5, 30],
+  [/蛋糕|甜点|慕斯/,             'cake',     3, 30],
+  [/饺子|馄饨|包子|烧麦|汤圆|手抓饼|速冻/, 'dumpling', 3, 60],
+  [/奶酪|芝士|黄油/,             'cheese',  14, 90],
+  [/剩菜|剩饭|便当|盒饭/,        'bowl',     2,  7],
+  [/米饭|粥/,                   'bowl',     2,  7],
+  [/豆腐|豆干/,                 'box',      3, 30],
+];
+const DEFAULT_SHELF = {fridge:7, freezer:30};
+/* 分类 → 图案与保质期（名称匹配不到时用分类兜底） */
+const KIND_RULE = {
+  '乳制品':{key:'milk',     fridgeDays:7,  freezerDays:30},
+  '蛋类':  {key:'egg',      fridgeDays:30, freezerDays:90},
+  '烘焙':  {key:'bread',    fridgeDays:5,  freezerDays:30},
+  '水果':  {key:'fruit',    fridgeDays:7,  freezerDays:30},
+  '蔬菜':  {key:'veg',      fridgeDays:4,  freezerDays:30},
+  '肉类':  {key:'meat',     fridgeDays:2,  freezerDays:90},
+  '海鲜':  {key:'fish',     fridgeDays:1,  freezerDays:60},
+  '速冻':  {key:'dumpling', fridgeDays:3,  freezerDays:60},
+  '主食':  {key:'bowl',     fridgeDays:2,  freezerDays:30},
+  '剩菜':  {key:'bowl',     fridgeDays:2,  freezerDays:7},
+  '饮料':  {key:'drink',    fridgeDays:30, freezerDays:60},
+  '调味':  {key:'box',      fridgeDays:90, freezerDays:180},
+  '其他':  {key:'box',      fridgeDays:7,  freezerDays:30},
+};
+
+function foodRule(name, kind){
+  for(const [re, key, fd, zd] of FOOD_RULES){
+    if(re.test(name)) return {key, fridgeDays:fd, freezerDays:zd};
+  }
+  if(kind && KIND_RULE[kind]) return KIND_RULE[kind];
+  return {key:'box', fridgeDays:DEFAULT_SHELF.fridge, freezerDays:DEFAULT_SHELF.freezer};
+}
+
+/* ---- 手绘涂鸦 SVG（线条经 rough 滤镜处理） ---- */
+const DS = 'stroke:#4a4238;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;';
+const DOODLES = {
+  milk:`<path d="M22 14 L32 6 L42 14 V54 a4 4 0 0 1-4 4 H26 a4 4 0 0 1-4-4 Z" fill="#f4f8ff" style="${DS}"/><path d="M22 14 H42 M32 6 V14" fill="none" style="${DS}"/><rect x="26" y="26" width="12" height="14" rx="2" fill="#9ec9f2" style="${DS}"/><path d="M26 46 q4 3 8 0" fill="none" style="${DS}"/>`,
+  egg:`<ellipse cx="32" cy="35" rx="15" ry="19" fill="#fdf3df" style="${DS}"/><path d="M24 30 q3-4 6-3" fill="none" style="${DS};stroke-width:1.8"/>`,
+  apple:`<path d="M32 20 q-13 -6 -15 8 q-2 16 15 26 q17 -10 15 -26 q-2 -14 -15 -8" fill="#ff8f8f" style="${DS}"/><path d="M32 20 q0 -8 6 -11" fill="none" style="${DS}"/><path d="M38 9 q7 -2 8 5 q-7 2 -8 -5" fill="#8fd6a0" style="${DS}"/>`,
+  banana:`<path d="M14 20 q6 26 32 28 q8 0 10 -6 q-26 2 -36 -24 q-4 -4 -6 2 Z" fill="#ffe27a" style="${DS}"/><path d="M14 20 l-3 -5" fill="none" style="${DS}"/>`,
+  straw:`<path d="M32 16 q-14 0 -14 12 q0 12 14 24 q14 -12 14 -24 q0 -12 -14 -12 Z" fill="#ff7d92" style="${DS}"/><path d="M24 16 q8 -8 16 0 M32 16 v-6" fill="#8fd6a0" style="${DS}"/><circle cx="27" cy="30" r="1.4" fill="#fff0d8"/><circle cx="37" cy="30" r="1.4" fill="#fff0d8"/><circle cx="32" cy="38" r="1.4" fill="#fff0d8"/>`,
+  melon:`<path d="M10 26 a22 22 0 0 0 44 0 Z" fill="#ff8f8f" style="${DS}"/><path d="M10 26 a22 22 0 0 0 44 0" fill="none" style="${DS};stroke:#3f8f5f;stroke-width:5"/><circle cx="25" cy="34" r="1.5" fill="#4a4238"/><circle cx="39" cy="34" r="1.5" fill="#4a4238"/><circle cx="32" cy="40" r="1.5" fill="#4a4238"/>`,
+  orange:`<circle cx="32" cy="36" r="17" fill="#ffc26e" style="${DS}"/><path d="M32 19 q0 -7 5 -9" fill="none" style="${DS}"/><path d="M37 10 q7 -1 7 6 q-7 1 -7 -6" fill="#8fd6a0" style="${DS}"/><path d="M24 33 q2 2 4 0 M38 42 q2 2 4 0" fill="none" style="${DS};stroke-width:1.6"/>`,
+  fruit:`<circle cx="26" cy="26" r="7" fill="#c9a0e8" style="${DS}"/><circle cx="38" cy="26" r="7" fill="#b78fe0" style="${DS}"/><circle cx="32" cy="36" r="7" fill="#c9a0e8" style="${DS}"/><circle cx="24" cy="44" r="7" fill="#b78fe0" style="${DS}"/><circle cx="40" cy="44" r="7" fill="#c9a0e8" style="${DS}"/><path d="M32 19 q0 -8 6 -10" fill="none" style="${DS}"/>`,
+  meat:`<path d="M14 36 q-4 -12 10 -17 q18 -6 26 4 q6 10 -4 17 q-16 10 -28 4 q-6 -3 -4 -8 Z" fill="#f49b9b" style="${DS}"/><ellipse cx="32" cy="33" rx="9" ry="6" fill="#ffd9d9" style="${DS};stroke-width:1.8"/>`,
+  fish:`<path d="M12 32 q12 -12 26 -10 q10 2 12 10 q-2 8 -12 10 q-14 2 -26 -10 Z" fill="#a8d4f0" style="${DS}"/><path d="M50 32 l9 -7 v14 Z" fill="#a8d4f0" style="${DS}"/><circle cx="22" cy="30" r="2" fill="#4a4238"/><path d="M30 28 q3 4 0 8" fill="none" style="${DS};stroke-width:1.6"/>`,
+  veg:`<path d="M32 34 q-16 2 -14 -8 q1 -7 8 -6 q0 -8 8 -8 q8 0 8 8 q7 -1 8 6 q2 10 -18 8 Z" fill="#93d6a2" style="${DS}"/><path d="M28 40 q-1 10 -4 14 M36 40 q1 10 4 14" fill="none" style="${DS}"/>`,
+  drink:`<rect x="22" y="14" width="20" height="38" rx="5" fill="#bfe3ff" style="${DS}"/><rect x="26" y="9" width="12" height="6" rx="2" fill="#8fc4ee" style="${DS}"/><path d="M22 30 h20" style="${DS};stroke-width:1.6" fill="none"/><path d="M27 38 q5 4 10 0" fill="none" style="${DS};stroke-width:1.8"/>`,
+  icecream:`<path d="M22 28 h20 l-10 26 Z" fill="#f2c98a" style="${DS}"/><path d="M24 34 l14 -8 M26 40 l12 -7" fill="none" style="${DS};stroke-width:1.4"/><path d="M22 28 q-3 -12 10 -13 q13 1 10 13 q-10 5 -20 0 Z" fill="#ffb3c8" style="${DS}"/><circle cx="32" cy="12" r="2.6" fill="#ff6b8a" style="${DS};stroke-width:1.6"/>`,
+  bread:`<path d="M14 30 q-4 -14 18 -15 q22 1 18 15 q14 2 12 12 q-2 10 -14 10 H16 q-12 0 -14 -10 q-2 -10 12 -12 Z" fill="#f0c487" style="${DS}"/><path d="M24 30 q2 4 0 8 M32 30 q2 4 0 8 M40 30 q2 4 0 8" fill="none" style="${DS};stroke-width:1.6"/>`,
+  cake:`<path d="M16 36 h32 v14 a3 3 0 0 1-3 3 H19 a3 3 0 0 1-3-3 Z" fill="#ffd9e6" style="${DS}"/><path d="M16 36 q4 6 8 0 q4 6 8 0 q4 6 8 0 q4 6 8 0" fill="none" style="${DS};stroke-width:1.8"/><path d="M32 36 v-8 M28 24 h8" style="${DS}" fill="none"/><circle cx="32" cy="24" r="2.4" fill="#ff6b8a" style="${DS};stroke-width:1.6"/>`,
+  dumpling:`<path d="M12 40 q20 -22 40 0 q-20 10 -40 0 Z" fill="#fdf0d8" style="${DS}"/><path d="M20 33 q2 -3 4 0 M28 29 q2 -3 4 0 M36 29 q2 -3 4 0 M44 33 q2 -3 4 0" fill="none" style="${DS};stroke-width:1.5"/>`,
+  bowl:`<path d="M14 30 h36 q-2 18 -18 18 q-16 0 -18 -18 Z" fill="#cfe4f7" style="${DS}"/><path d="M24 22 q2 -3 0 -6 M32 22 q2 -3 0 -6 M40 22 q2 -3 0 -6" fill="none" style="${DS};stroke-width:1.8"/><path d="M26 48 h12" style="${DS}" fill="none"/>`,
+  cheese:`<path d="M12 44 L52 26 V44 a3 3 0 0 1-3 3 H15 a3 3 0 0 1-3-3 Z" fill="#ffd98a" style="${DS}"/><circle cx="26" cy="40" r="3" fill="#f2c268" style="${DS};stroke-width:1.5"/><circle cx="40" cy="37" r="2.4" fill="#f2c268" style="${DS};stroke-width:1.5"/>`,
+  box:`<path d="M16 22 h32 v26 a4 4 0 0 1-4 4 H20 a4 4 0 0 1-4-4 Z" fill="#efe6d8" style="${DS}"/><path d="M16 22 l6 -8 h20 l6 8 M32 14 v8" fill="none" style="${DS}"/><path d="M24 34 q8 5 16 0" fill="none" style="${DS};stroke-width:1.8"/>`,
+};
+function doodleSVG(key){
+  const inner = DOODLES[key] || DOODLES.box;
+  return `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g filter="url(#rough)">${inner}</g></svg>`;
+}
+
+/* ---- 冰箱渲染 ---- */
+const TAPES = ['rgba(255,222,130,.92)','rgba(168,230,207,.92)','rgba(255,183,200,.92)','rgba(174,214,255,.92)','rgba(221,196,255,.92)'];
+let fridgeOpen = false;
+
+function daysLeft(item){
+  return Math.round((dayStart(item.expiry) - dayStart(Date.now())) / 86400000);
+}
+function dayBadge(item){
+  const dl = daysLeft(item);
+  if(item.zone==='freezer' && dl > 14)
+    return `<span class="s-days frozen">❄ ${fmtDateY(item.expiry)}到期</span>`;
+  if(dl < 0)  return `<span class="s-days bad">已过期 ${-dl} 天</span>`;
+  if(dl === 0) return `<span class="s-days bad">今天过期！</span>`;
+  if(dl <= 2)  return `<span class="s-days warn">剩 ${dl} 天</span>`;
+  return `<span class="s-days ok">剩 ${dl} 天</span>`;
+}
+function renderFridge(){
+  const fz = DB.fridge.filter(i=>i.zone==='freezer');
+  const cd = DB.fridge.filter(i=>i.zone==='fridge');
+  $('#fzCount').textContent = fz.length ? `${fz.length} 件` : '';
+  $('#cdCount').textContent = cd.length ? `${cd.length} 件` : '';
+
+  const paint = (list, box)=>{
+    box.innerHTML = '';
+    if(!list.length){
+      box.innerHTML = '<div class="zone-empty">空空如也，去囤点货吧 🛒</div>';
+      return;
+    }
+    list.sort((a,b)=>a.expiry-b.expiry).forEach((it,idx)=>{
+      const rule = foodRule(it.name, it.kind);
+      const st = document.createElement('div');
+      st.className = 'sticker';
+      st.style.setProperty('--rot', ((idx%5)-2)*2.2 + 'deg');
+      st.style.setProperty('--tape', TAPES[idx % TAPES.length]);
+      st.innerHTML = `${doodleSVG(rule.key)}<div class="s-name">${esc(it.name)}</div>
+        <div class="s-exp">${it.kind?esc(it.kind)+' · ':''}${fmtDate(it.putIn)} 入</div>${dayBadge(it)}`;
+      st.onclick = ()=> openFoodDetail(it);
+      box.appendChild(st);
+    });
+  };
+  paint(fz, $('#fzShelf'));
+  paint(cd, $('#cdShelf'));
+
+  // 状态提示
+  const soon = DB.fridge.filter(i=>daysLeft(i)>=0 && daysLeft(i)<=2).length;
+  const over = DB.fridge.filter(i=>daysLeft(i)<0).length;
+  const total = DB.fridge.length;
+  let msg;
+  if(!total) msg = '冰箱是空的，点下方「放入食物」开始囤货';
+  else if(over) msg = `共 ${total} 件 · <b>${over} 件已过期</b>，快处理！`;
+  else if(soon) msg = `共 ${total} 件 · <b>${soon} 件快过期了</b>，抓紧吃～`;
+  else msg = `共 ${total} 件，都很新鲜 ✨`;
+  $('#fridgeStatus').innerHTML = msg;
+  updateFridgeBadge();
+}
+function updateFridgeBadge(){
+  const bad = (DB.fridge||[]).some(i=>daysLeft(i)<=2);
+  const b = $('#fridgeBadge');
+  if(b) b.style.display = bad ? 'block' : 'none';
+}
+
+/* 食物详情：查看放入/过期时间、修改保质期、吃掉或扔掉 */
+function openFoodDetail(item){
+  const rule = foodRule(item.name, item.kind);
+  const dl = daysLeft(item);
+  const state = dl < 0 ? '已经过期啦，别吃了' : dl === 0 ? '今天就是最后期限！' : dl <= 2 ? '快过期啦，赶紧吃掉' : '状态很棒 ✨';
+  openSheet('🧾 ' + item.name, item.zone === 'freezer' ? '冷冻区' : '冷藏区',    `<div style="display:flex;gap:14px;align-items:center;margin-top:14px;">
+      <div style="width:76px;height:76px;flex-shrink:0;background:#fffdf5;border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(0,0,0,.18)">${doodleSVG(rule.key)}</div>
+      <div style="font-size:.82rem;line-height:1.9;color:var(--sub)">
+        放入时间：<b style="color:var(--text)">${fmtYMD(item.putIn)}</b><br>
+        过期时间：<b style="color:var(--text)">${fmtYMD(item.expiry)}</b><br>
+        剩余：<b style="color:${dl<0?'#ff6b6b':dl<=2?'#ffd166':'#5fd68a'}">${dl<0?`过期 ${-dl} 天`:dl+' 天'}</b>
+      </div>
+    </div>
+    <div style="margin-top:12px;font-size:.8rem;color:${dl<0?'#ff6b6b':'#8fd6a0'}">${state}</div>
+    <div class="f-row"><label>修改过期时间</label><input id="fd_exp" type="date" value="${fmtYMD(item.expiry)}"></div>
+    <div class="f-row" style="display:flex;gap:10px">
+      <button id="fd_eat" style="flex:1;padding:12px;border-radius:12px;background:#2f7d44;border:none;color:#fff;font-weight:700;cursor:pointer">吃掉 / 拿走</button>
+      <button id="fd_del" style="flex:1;padding:12px;border-radius:12px;background:#3a2226;border:1px solid #6b3a3f;color:#ff9a9a;font-weight:700;cursor:pointer">扔掉</button>
+    </div>`,
+    ()=>{
+      const v = $('#fd_exp').value;
+      if(v) item.expiry = parseYMD(v, true);
+      save(); closeSheet(); renderFridge(); toast('已更新 ✓');
+    }, '保存修改');
+  $('#fd_eat').onclick = ()=>{
+    DB.fridge = DB.fridge.filter(x=>x.id!==item.id);
+    save(); closeSheet(); renderFridge(); toast('已吃掉，真棒 😋');
+  };
+  $('#fd_del').onclick = ()=>{
+    if(!confirm(`确定扔掉「${item.name}」？`)) return;
+    DB.fridge = DB.fridge.filter(x=>x.id!==item.id);
+    save(); closeSheet(); renderFridge(); toast('已扔掉 🗑');
+  };
+}
+
+/* 开关门 */
+function setDoor(open){
+  fridgeOpen = open;
+  $('#fridge').classList.toggle('open', open);
+  $('#doorHint').textContent = open ? '' : '👆 点我打开冰箱';
+}
+$('#fridge').addEventListener('click', e=>{
+  if(!fridgeOpen) setDoor(true);
+});
+$('#toggleDoorBtn').onclick = ()=> setDoor(!fridgeOpen);
+
+/* 放入食物表单 */
+/* 冰箱常用选项 */
+const FRIDGE_PRESETS = {
+  name: ['牛奶','酸奶','鸡蛋','面包','吐司','苹果','香蕉','橙子','草莓','蓝莓',
+         '西兰花','番茄','黄瓜','胡萝卜','生菜','土豆','洋葱','苹果派',
+         '鸡胸肉','牛肉','猪肉','排骨','虾仁','三文鱼','整条鱼',
+         '饺子','馄饨','包子','披萨','蛋糕','冰淇淋','雪糕','方便面','米饭','剩饭','剩菜',
+         '可乐','果汁','矿泉水','牛奶箱','酸奶盒','奶酪','黄油','豆腐','豆干','咸菜','果酱','蜂蜜'],
+  kind: ['乳制品','蛋类','烘焙','水果','蔬菜','肉类','海鲜','速冻','主食','剩菜','饮料','调味','其他'],
+  shelf: ['3天','1周','2周','1个月','3个月','半年','1年'],
+};
+/* 常见食物 → 分类（点名称时自动带上分类） */
+const NAME_KIND = {
+  '牛奶':'乳制品','牛奶箱':'乳制品','酸奶':'乳制品','酸奶盒':'乳制品','奶酪':'乳制品','黄油':'乳制品',
+  '鸡蛋':'蛋类','面包':'烘焙','吐司':'烘焙','蛋糕':'烘焙','苹果派':'烘焙',
+  '苹果':'水果','香蕉':'水果','橙子':'水果','草莓':'水果','蓝莓':'水果','果酱':'水果','蜂蜜':'调味',
+  '西兰花':'蔬菜','番茄':'蔬菜','黄瓜':'蔬菜','胡萝卜':'蔬菜','生菜':'蔬菜','土豆':'蔬菜','洋葱':'蔬菜',
+  '鸡胸肉':'肉类','牛肉':'肉类','猪肉':'肉类','排骨':'肉类',
+  '虾仁':'海鲜','三文鱼':'海鲜','整条鱼':'海鲜',
+  '饺子':'速冻','馄饨':'速冻','包子':'速冻','披萨':'速冻','冰淇淋':'速冻','雪糕':'速冻',
+  '方便面':'主食','米饭':'主食','剩饭':'剩菜','剩菜':'剩菜',
+  '可乐':'饮料','果汁':'饮料','矿泉水':'饮料',
+  '豆腐':'其他','豆干':'其他','咸菜':'调味',
+};
+/* 保质期快捷天数 */
+const SHELF_DAYS = {'3天':3,'1周':7,'2周':14,'1个月':30,'3个月':90,'半年':180,'1年':365};
+
+$('#addFoodBtn').onclick = ()=>{
+  const today = fmtYMD(Date.now());
+  openSheet('🥬 放入食物', '写上名字就会生成手绘小贴纸；不填过期日期会按建议保质期自动算', `
+    <div class="f-row"><label>食物名称</label><input id="ff_name" placeholder="如：鲜牛奶 / 草莓 / 鸡胸肉">
+      <div class="chips" data-chips="ff_name">
+        ${FRIDGE_PRESETS.name.map(p=>`<button type="button" class="chip" data-v="${esc(p)}">${esc(p)}</button>`).join('')}
+      </div>
+    </div>
+    <div class="f-row"><label>分类（决定贴纸图案）</label>
+      <input type="hidden" id="ff_kind">
+      <div class="chips" data-chips="ff_kind">
+        ${FRIDGE_PRESETS.kind.map(p=>`<button type="button" class="chip" data-v="${esc(p)}">${esc(p)}</button>`).join('')}
+      </div>
+    </div>
+    <div class="f-row"><label>放在哪层</label>
+      <div class="seg">
+        <button id="ff_fridge" class="on">🧊 冷藏</button>
+        <button id="ff_freezer">❄️ 冷冻</button>
+      </div>
+    </div>
+    <div class="f-row"><label>放入时间</label><input id="ff_putin" type="date" value="${today}"></div>
+    <div class="f-row"><label>过期时间（可不填）</label><input id="ff_expiry" type="date">
+      <div class="chips" data-chips="ff_shelf">
+        ${FRIDGE_PRESETS.shelf.map(p=>`<button type="button" class="chip" data-v="${esc(p)}">${esc(p)}</button>`).join('')}
+      </div>
+      <div class="f-hint" id="ff_hint">输入名称后这里会给出建议保质期</div>
+    </div>
+  `, ()=>{
+    const name = $('#ff_name').value.trim();
+    if(!name){ toast('先写个名字吧'); return; }
+    const zone = $('#ff_freezer').classList.contains('on') ? 'freezer' : 'fridge';
+    const kind = $('#ff_kind').value.trim();
+    const putIn = parseYMD($('#ff_putin').value) || Date.now();
+    let expiry, suggested = false, sugDays = 0;
+    if($('#ff_expiry').value){
+      expiry = parseYMD($('#ff_expiry').value, true);
+      if(expiry == null){ toast('过期日期看不懂，换个格式试试'); return; }
+    }else{
+      const rule = foodRule(name, kind);
+      sugDays = zone==='freezer' ? (rule.freezerDays||30) : rule.fridgeDays;
+      expiry = dayStart(putIn) + sugDays*86400000;
+      suggested = true;
+    }
+    DB.fridge.push({id:uid(), name, kind, zone, putIn, expiry});
+    save(); closeSheet(); renderFridge(); setDoor(true);
+    toast(suggested ? `已贴进冰箱 · 建议保质 ${sugDays} 天` : '已贴进冰箱 ✓');
+  }, '放进冰箱 🧊');
+
+  // chips 通用处理：名称 / 分类填入输入框，保质期算成日期
+  document.querySelectorAll('#sheetBody .chips').forEach(box=>{
+    box.addEventListener('click', e=>{
+      const b = e.target.closest('.chip'); if(!b) return;
+      const key = box.dataset.chips;
+      const on = b.classList.contains('on');
+      if(key === 'ff_shelf'){
+        if(on){ b.classList.remove('on'); $('#ff_expiry').value=''; }
+        else{
+          box.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+          b.classList.add('on');
+          const days = SHELF_DAYS[b.dataset.v];
+          const base = parseYMD($('#ff_putin').value) || Date.now();
+          $('#ff_expiry').value = fmtYMD(dayStart(base) + days*86400000);
+        }
+        return;
+      }
+      const input = $('#'+key);
+      if(!input) return;
+      if(on){ b.classList.remove('on'); input.value=''; }
+      else{
+        box.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+        b.classList.add('on');
+        input.value = b.dataset.v;
+        // 选了食物名 → 自动带上分类并高亮
+        if(key === 'ff_name'){
+          const kind = NAME_KIND[b.dataset.v];
+          if(kind){
+            $('#ff_kind').value = kind;
+            const kb = document.querySelector('#sheetBody .chips[data-chips="ff_kind"]');
+            if(kb){
+              kb.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+              const hit = [...kb.querySelectorAll('.chip')].find(x=>x.dataset.v===kind);
+              if(hit) hit.classList.add('on');
+            }
+          }
+        }
+      }
+      updHint();
+    });
+  });
+
+  // 分段选择
+  $('#ff_fridge').onclick = ()=>{ $('#ff_fridge').classList.add('on'); $('#ff_freezer').classList.remove('on'); updHint(); };
+  $('#ff_freezer').onclick = ()=>{ $('#ff_freezer').classList.add('on'); $('#ff_fridge').classList.remove('on'); updHint(); };
+  $('#ff_name').addEventListener('input', updHint);
+  $('#ff_putin').addEventListener('change', updHint);
+  function updHint(){
+    const name = $('#ff_name').value.trim();
+    const kind = $('#ff_kind').value.trim();
+    if(!name){ $('#ff_hint').textContent = '输入名称后这里会给出建议保质期'; return; }
+    const rule = foodRule(name, kind);
+    const zone = $('#ff_freezer').classList.contains('on') ? 'freezer' : 'fridge';
+    const d = zone==='freezer' ? (rule.freezerDays||30) : rule.fridgeDays;
+    $('#ff_hint').textContent = `💡 建议：${zone==='freezer'?'冷冻':'冷藏'}约 ${d} 天${rule.key==='box'?'（没查到这个食物，按通用建议算）':''}`;
+  }
+};
+
+/* ================= 导航 ================= */
+function switchPage(page){
+  for(const p of ['home','calendar','fridge']) $('#page-'+p).style.display = 'none';
+  for(const b of ['navHome','navCalendar','navFridge']) $('#'+b).classList.remove('on');
+  $('#page-'+page).style.display = 'block';
+  $('#'+({home:'navHome',calendar:'navCalendar',fridge:'navFridge'})[page]).classList.add('on');
+  if(page==='home') renderHome();
+  if(page==='calendar') renderCalendar();
+  if(page==='fridge') renderFridge();
+}
+$('#navHome').onclick = ()=>switchPage('home');
+$('#navCalendar').onclick = ()=>switchPage('calendar');
+$('#navFridge').onclick = ()=>switchPage('fridge');
+
+function refreshAll(){
+  renderHome();
+  if($('#page-calendar').style.display!=='none') renderCalendar();
+  if($('#page-fridge').style.display!=='none') renderFridge();
+}
+
+/* ================= 桌面图标修复 ================= */
+/* 桌面图标不更新，通常是浏览器缓存了旧的 manifest / 图标。
+   这里做两件事：清掉 SW + Cache Storage，并给图标链接打上新版本号强制刷新。 */
+$('#fixIconBtn').onclick = async ()=>{
+  // 1) 给所有图标链接加新时间戳，强制浏览器重新拉取
+  const stamp = Date.now();
+  document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]').forEach(l=>{
+    if(l.href.startsWith('data:')) return;
+    l.href = l.href.split('?')[0] + '?v=' + stamp;
+  });
+  const mf = document.querySelector('link[rel="manifest"]');
+  if(mf) mf.href = './manifest.webmanifest?v=' + stamp;
+  // 2) 清缓存
+  try{
+    if('caches' in window){
+      const keys = await caches.keys();
+      await Promise.all(keys.map(k => caches.delete(k)));
+    }
+    if(navigator.serviceWorker){
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map(r => r.unregister()));
+    }
+  }catch(e){}
+  toast('已刷新图标缓存，请删除旧图标后重新添加 🐾');
+};
+
+$('#resetAppBtn').onclick = async ()=>{
+  if(!confirm('将清空浏览器缓存与 Service Worker（不会删除你的记录），确定吗？')) return;
+  try{
+    if('caches' in window){
+      const keys = await caches.keys();
+      await Promise.all(keys.map(k => caches.delete(k)));
+    }
+    if(navigator.serviceWorker){
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map(r => r.unregister()));
+    }
+    localStorage.removeItem('lifeLog.a2hsClosed');
+  }catch(e){}
+  toast('已清空缓存，重新打开页面即可');
+};
+
+/* ================= 导入 / 导出 ================= */
+$('#exportBtn').onclick = ()=>{
+  const blob = new Blob([JSON.stringify(DB,null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `life-log-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+};
+$('#importBtn').onclick = ()=> $('#importFile').click();
+$('#importFile').onchange = e=>{
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = ()=>{
+    try{
+      const data = JSON.parse(r.result);
+      if(!Array.isArray(data.events)) throw 0;
+      DB = {events:data.events, fridge:Array.isArray(data.fridge)?data.fridge:[]};
+      save(); refreshAll(); toast('导入成功 ✓');
+    }catch(_){ toast('文件格式不对'); }
+  };
+  r.readAsText(f);
+};
+
+/* ================= Logo（可爱小猫咪头部，单文件内嵌） ================= */
+const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="furG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff2f7"/><stop offset="1" stop-color="#ffe0ec"/>
+    </linearGradient>
+    <linearGradient id="earG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd0e2"/><stop offset="1" stop-color="#ffb8d2"/>
+    </linearGradient>
+    <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff3f8"/><stop offset="1" stop-color="#ffdcea"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="128" height="128" fill="url(#bgG)"/>
+  <!-- 耳朵 -->
+  <path d="M30 46 L24 14 L56 32 Z" fill="url(#earG)" stroke="#e79dbd" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M98 46 L104 14 L72 32 Z" fill="url(#earG)" stroke="#e79dbd" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M35 42 L32 24 L49 33 Z" fill="#ff9ec0"/>
+  <path d="M93 42 L96 24 L79 33 Z" fill="#ff9ec0"/>
+  <!-- 头 -->
+  <ellipse cx="64" cy="68" rx="42" ry="37" fill="url(#furG)" stroke="#e79dbd" stroke-width="3.4"/>
+  <!-- 额头发丝 -->
+  <path d="M58 34 q6 -12 12 -2" fill="none" stroke="#e79dbd" stroke-width="3" stroke-linecap="round"/>
+  <!-- 眼睛 -->
+  <ellipse cx="49" cy="66" rx="6.5" ry="7.5" fill="#5a4250"/>
+  <ellipse cx="79" cy="66" rx="6.5" ry="7.5" fill="#5a4250"/>
+  <circle cx="51.2" cy="63.4" r="2.3" fill="#fff"/>
+  <circle cx="81.2" cy="63.4" r="2.3" fill="#fff"/>
+  <!-- 腮红 -->
+  <ellipse cx="34" cy="77" rx="7.5" ry="5" fill="#ffb3cd" opacity=".85"/>
+  <ellipse cx="94" cy="77" rx="7.5" ry="5" fill="#ffb3cd" opacity=".85"/>
+  <!-- 鼻子 -->
+  <path d="M64 76 l5 0 l-2.5 4.2 Z" fill="#ff8fb3"/>
+  <!-- 嘴 -->
+  <path d="M64 80 q-4.5 6 -9 1.5 M64 80 q4.5 6 9 1.5" fill="none" stroke="#5a4250" stroke-width="3" stroke-linecap="round"/>
+  <!-- 胡须 -->
+  <g stroke="#e79dbd" stroke-width="2.6" stroke-linecap="round">
+    <path d="M36 60 l-11 -4"/><path d="M35 68 l-12 1"/><path d="M37 76 l-10 5"/>
+    <path d="M92 60 l11 -4"/><path d="M93 68 l12 1"/><path d="M91 76 l10 5"/>
+  </g>
+  <!-- 小围巾 -->
+  <path d="M44 94 q20 9 40 0 l-2 11 q-18 7 -36 0 Z" fill="#8ec5ff" stroke="#6ba7ea" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M78 100 l12 4 l-4 11 l-11 -5 Z" fill="#8ec5ff" stroke="#6ba7ea" stroke-width="3" stroke-linejoin="round"/>
+</svg>`;
+$('#logoBox').innerHTML = LOGO_SVG;
+
+/* ================= 添加到主屏幕（A2HS） ================= */
+/* 独立运行检测：已安装则不再提示 */
+function isStandalone(){
+  return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)
+      || window.navigator.standalone === true;
+}
+function isIOS(){
+  return /iPad|iPhone|iPod/.test(navigator.userAgent)
+      || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+function showA2HS(){
+  if(isStandalone()) return;
+  if(localStorage.getItem('lifeLog.a2hsClosed')) return;
+  const tip = isIOS()
+    ? '点击 Safari 底部「分享」→「添加到主屏幕」'
+    : '点击浏览器菜单 →「安装应用 / 添加到主屏幕」';
+  $('#a2hsTip').textContent = tip;
+  $('#a2hsGo').textContent = isIOS() ? '怎么加？' : '添加';
+  $('#a2hs').classList.add('show');
+}
+$('#a2hsX').onclick = ()=>{
+  $('#a2hs').classList.remove('show');
+  localStorage.setItem('lifeLog.a2hsClosed','1');
+};
+$('#a2hsGo').onclick = ()=>{
+  const b = $('#a2hsGo');
+  if(b.dataset.done){                       // 已点过一次 → 显示详细步骤
+    const tip = isIOS()
+      ? 'Safari 底部「分享」按钮 ⬆️ → 下滑找到「添加到主屏幕」→ 右上角「添加」'
+      : '浏览器右上角「⋮」菜单 → 选择「安装应用」或「添加到主屏幕」';
+    $('#a2hsTip').textContent = tip;
+    return;
+  }
+  b.dataset.done = '1';
+  if(isIOS()){
+    $('#a2hsTip').textContent = 'Safari 底部「分享」按钮 ⬆️ → 下滑找到「添加到主屏幕」→ 右上角「添加」';
+    $('#a2hsGo').textContent = '知道了';
+  }else{
+    // Android / 桌面：优先用原生安装提示
+    if(window.deferredPrompt){
+      window.deferredPrompt.prompt();
+      window.deferredPrompt.userChoice.finally(()=>{
+        window.deferredPrompt = null;
+        $('#a2hs').classList.remove('show');
+        localStorage.setItem('lifeLog.a2hsClosed','1');
+      });
+      return;
+    }
+    $('#a2hsTip').textContent = '浏览器右上角「⋮」菜单 → 选择「安装应用」或「添加到主屏幕」';
+    $('#a2hsGo').textContent = '知道了';
+  }
+};
+window.addEventListener('beforeinstallprompt', e=>{
+  e.preventDefault();
+  window.deferredPrompt = e;
+});
+window.addEventListener('appinstalled', ()=>{
+  window.deferredPrompt = null;
+  $('#a2hs').classList.remove('show');
+  localStorage.setItem('lifeLog.a2hsClosed','1');
+  toast('已添加到主屏幕 🐾');
+});
+setTimeout(showA2HS, 1500);
+
+/* ================= Service Worker（图标/manifest 永不缓存旧版） ================= */
+if('serviceWorker' in navigator && location.protocol.startsWith('http')){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('./sw.js').then(reg=>{
+      // 有新版本就立即激活，避免旧 SW 卡住新图标
+      reg.addEventListener('updatefound', ()=>{
+        const nw = reg.installing;
+        if(nw) nw.addEventListener('statechange', ()=>{ if(nw.state==='activated') location.reload(); });
+      });
+    }).catch(()=>{});
+  });
+}
+
+/* ================= 启动 ================= */
+renderHome();
+renderFridge();
+setInterval(refreshAll, 60000);
+</script>
+</body>
+</html>

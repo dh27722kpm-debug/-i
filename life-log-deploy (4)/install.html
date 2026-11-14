@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#14161c">
+<title>安装到手机桌面 · 生活记录台 🐱</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  :root{--bg:#14161c;--card:#1d2029;--line:#313642;--text:#eef1f6;--sub:#8b93a5;--accent:#8ba4ff;--accent2:#5f79f0;}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;
+    padding:calc(28px + env(safe-area-inset-top)) 20px calc(28px + env(safe-area-inset-bottom));
+  }
+  .logo{width:88px;height:88px;border-radius:22px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.5);margin-bottom:16px;}
+  .logo svg{width:100%;height:100%;display:block;}
+  h1{font-size:1.35rem;font-weight:800;letter-spacing:.5px;text-align:center;}
+  .sub{color:var(--sub);font-size:.82rem;margin-top:6px;text-align:center;line-height:1.6;}
+  .qr{background:#fff;padding:12px;border-radius:18px;margin:22px 0 6px;line-height:0;box-shadow:0 8px 26px rgba(0,0,0,.45);}
+  .qr img{width:min(240px,62vw);height:auto;display:block;}
+  .url{color:var(--accent);font-size:.88rem;margin-top:12px;word-break:break-all;text-align:center;font-weight:600;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:16px 18px;margin-top:22px;width:100%;max-width:440px;
+  }
+  .card h2{font-size:.95rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:7px;}
+  .steps{list-style:none;counter-reset:s;}
+  .steps li{
+    counter-increment:s;position:relative;padding:0 0 14px 34px;
+    font-size:.83rem;color:var(--sub);line-height:1.65;
+  }
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:0;
+    width:22px;height:22px;border-radius:50%;background:var(--accent2);color:#fff;
+    font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;
+  }
+  .steps li:last-child{padding-bottom:0;}
+  .steps b{color:var(--text);font-weight:600;}
+  .ios .share{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:18px;height:18px;border-radius:4px;background:var(--accent);color:#fff;
+    font-size:.7rem;vertical-align:middle;margin:0 2px;
+  }
+  .tip{
+    background:#1f2a24;border:1px solid #2f4a3a;color:#9fe0b5;
+    border-radius:14px;padding:13px 15px;font-size:.79rem;line-height:1.7;
+    margin-top:18px;width:100%;max-width:440px;
+  }
+  .tip b{color:#c4f0d3;}
+  .warn{background:#2a2320;border-color:#4a3a2a;color:#e8c99a;}
+  .warn b{color:#f5dcb4;}
+  .go{
+    display:block;width:100%;max-width:440px;margin-top:20px;
+    background:var(--accent2);border:none;color:#fff;font-size:.98rem;font-weight:700;
+    padding:15px;border-radius:15px;cursor:pointer;text-decoration:none;text-align:center;
+    font-family:inherit;box-shadow:0 8px 22px rgba(95,121,240,.35);
+  }
+  .go:active{transform:scale(.97);}
+  .foot{color:#5a6274;font-size:.72rem;margin-top:20px;text-align:center;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<div class="logo" id="logo"></div>
+<h1>生活记录台 🐱</h1>
+<div class="sub">扫码打开 → 添加到主屏幕<br>像小程序一样全屏使用，桌面是只小猫</div>
+
+<div class="qr" id="qrBox"><img id="qr" alt="二维码"></div>
+<div class="url" id="urlText">正在获取地址…</div>
+
+<a class="go" id="goBtn" href="index.html">直接打开应用 →</a>
+
+<div class="card">
+  <h2>📱 iPhone（Safari）</h2>
+  <ol class="steps">
+    <li>用 <b>Safari</b> 打开上面的网址（必须是 Safari，微信/QQ 浏览器不支持）</li>
+    <li>点底部中间的<b>「分享」</b>按钮 <span class="share">↑</span></li>
+    <li>在菜单里向下滑，找到 <b>「添加到主屏幕」</b></li>
+    <li>右上角点 <b>「添加」</b>，桌面就会出现猫咪图标 🐱</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h2>🤖 安卓（Chrome / Edge / 三星浏览器）</h2>
+  <ol class="steps">
+    <li>用浏览器打开上面的网址</li>
+    <li>点右上角 <b>「⋮」</b> 菜单</li>
+    <li>选 <b>「添加到主屏幕」</b> 或 <b>「安装应用」</b></li>
+    <li>确认后桌面出现猫咪图标 🐱</li>
+  </ol>
+</div>
+
+<div class="tip">
+  <b>💡 图标显示不对？</b><br>
+  桌面上显示的是<b>旧图标</b>的话，先长按旧图标删除，再重新添加一次；<br>
+  或者打开应用点首页的「🐱 修复桌面图标」按钮，一键刷新图标缓存。
+</div>
+
+<div class="tip warn">
+  <b>⚠️ 关于本页面地址</b><br>
+  本页由电脑上的 <code>start-server.py</code> 生成，电脑关机后地址就失效了。<br>
+  想长期使用，请看 zip 里的 <b>部署指南.md</b>，有免费托管的详细步骤。
+</div>
+
+<div class="foot">
+  数据保存在手机浏览器本地，不上传任何服务器<br>
+  首次打开后建议在应用里「导出数据」做一份备份
+</div>
+
+<script>
+// 1) 内联猫咪 logo（与应用一致）
+const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+<defs><linearGradient id="furG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2f7"/><stop offset="1" stop-color="#ffe0ec"/></linearGradient>
+<linearGradient id="earG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd0e2"/><stop offset="1" stop-color="#ffb8d2"/></linearGradient>
+<linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3f8"/><stop offset="1" stop-color="#ffdcea"/></linearGradient></defs>
+<rect x="0" y="0" width="128" height="128" fill="url(#bgG)"/>
+<path d="M30 46 L24 14 L56 32 Z" fill="url(#earG)" stroke="#e79dbd" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="M98 46 L104 14 L72 32 Z" fill="url(#earG)" stroke="#e79dbd" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="M35 42 L32 24 L49 33 Z" fill="#ff9ec0"/><path d="M93 42 L96 24 L79 33 Z" fill="#ff9ec0"/>
+<ellipse cx="64" cy="68" rx="42" ry="37" fill="url(#furG)" stroke="#e79dbd" stroke-width="3.4"/>
+<path d="M58 34 q6 -12 12 -2" fill="none" stroke="#e79dbd" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="49" cy="66" rx="6.5" ry="7.5" fill="#5a4250"/><ellipse cx="79" cy="66" rx="6.5" ry="7.5" fill="#5a4250"/>
+<circle cx="51.2" cy="63.4" r="2.3" fill="#fff"/><circle cx="81.2" cy="63.4" r="2.3" fill="#fff"/>
+<ellipse cx="34" cy="77" rx="7.5" ry="5" fill="#ffb3cd" opacity=".85"/><ellipse cx="94" cy="77" rx="7.5" ry="5" fill="#ffb3cd" opacity=".85"/>
+<path d="M64 76 l5 0 l-2.5 4.2 Z" fill="#ff8fb3"/>
+<path d="M64 80 q-4.5 6 -9 1.5 M64 80 q4.5 6 9 1.5" fill="none" stroke="#5a4250" stroke-width="3" stroke-linecap="round"/>
+<g stroke="#e79dbd" stroke-width="2.6" stroke-linecap="round"><path d="M36 60 l-11 -4"/><path d="M35 68 l-12 1"/><path d="M37 76 l-10 5"/><path d="M92 60 l11 -4"/><path d="M93 68 l12 1"/><path d="M91 76 l10 5"/></g>
+<path d="M44 94 q20 9 40 0 l-2 11 q-18 7 -36 0 Z" fill="#8ec5ff" stroke="#6ba7ea" stroke-width="3" stroke-linejoin="round"/>
+<path d="M78 100 l12 4 l-4 11 l-11 -5 Z" fill="#8ec5ff" stroke="#6ba7ea" stroke-width="3" stroke-linejoin="round"/>
+</svg>`;
+document.getElementById('logo').innerHTML = LOGO_SVG;
+
+// 2) 显示当前地址（服务端会把真实局域网地址注入到 __APP_URL__）
+var injected = "__APP_URL__";
+var here = location.href.replace(/[^/]*$/, '') || '.';
+var appUrl = (injected !== "__APP_URL__") ? injected : (here + 'index.html');
+document.getElementById('urlText').textContent = appUrl;
+document.getElementById('goBtn').href = appUrl;
+
+// 3) 二维码：优先用服务器生成的图（内容就是上面的地址），否则退回 CDN 接口
+var qr = document.getElementById('qr');
+qr.onerror = function(){
+  this.onerror = null;
+  this.src = 'https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=' + encodeURIComponent(appUrl);
+};
+qr.src = 'start-qrcode.png?v=' + Date.now();
+</script>
+</body>
+</html>

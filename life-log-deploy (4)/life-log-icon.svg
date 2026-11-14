@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128"><defs>
+    <linearGradient id="furG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff2f7"/><stop offset="1" stop-color="#ffe0ec"/>
+    </linearGradient>
+    <linearGradient id="earG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd0e2"/><stop offset="1" stop-color="#ffb8d2"/>
+    </linearGradient>
+    <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff3f8"/><stop offset="1" stop-color="#ffdcea"/>
+    </linearGradient>
+  </defs><rect x="0" y="0" width="128" height="128" fill="url(#bgG)"/><g transform="translate(8.96,8.96) scale(0.86)">
+  <!-- 耳朵 -->
+  <path d="M30 46 L24 14 L56 32 Z" fill="url(#earG)" stroke="#e79dbd" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M98 46 L104 14 L72 32 Z" fill="url(#earG)" stroke="#e79dbd" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M35 42 L32 24 L49 33 Z" fill="#ff9ec0"/>
+  <path d="M93 42 L96 24 L79 33 Z" fill="#ff9ec0"/>
+  <!-- 头 -->
+  <ellipse cx="64" cy="68" rx="42" ry="37" fill="url(#furG)" stroke="#e79dbd" stroke-width="3.4"/>
+  <!-- 额头发丝 -->
+  <path d="M58 34 q6 -12 12 -2" fill="none" stroke="#e79dbd" stroke-width="3" stroke-linecap="round"/>
+  <!-- 眼睛 -->
+  <ellipse cx="49" cy="66" rx="6.5" ry="7.5" fill="#5a4250"/>
+  <ellipse cx="79" cy="66" rx="6.5" ry="7.5" fill="#5a4250"/>
+  <circle cx="51.2" cy="63.4" r="2.3" fill="#fff"/>
+  <circle cx="81.2" cy="63.4" r="2.3" fill="#fff"/>
+  <!-- 腮红 -->
+  <ellipse cx="34" cy="77" rx="7.5" ry="5" fill="#ffb3cd" opacity=".85"/>
+  <ellipse cx="94" cy="77" rx="7.5" ry="5" fill="#ffb3cd" opacity=".85"/>
+  <!-- 鼻子 -->
+  <path d="M64 76 l5 0 l-2.5 4.2 Z" fill="#ff8fb3"/>
+  <!-- 嘴 -->
+  <path d="M64 80 q-4.5 6 -9 1.5 M64 80 q4.5 6 9 1.5" fill="none" stroke="#5a4250" stroke-width="3" stroke-linecap="round"/>
+  <!-- 胡须 -->
+  <g stroke="#e79dbd" stroke-width="2.6" stroke-linecap="round">
+    <path d="M36 60 l-11 -4"/><path d="M35 68 l-12 1"/><path d="M37 76 l-10 5"/>
+    <path d="M92 60 l11 -4"/><path d="M93 68 l12 1"/><path d="M91 76 l10 5"/>
+  </g>
+  <!-- 小围巾 -->
+  <path d="M44 94 q20 9 40 0 l-2 11 q-18 7 -36 0 Z" fill="#8ec5ff" stroke="#6ba7ea" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M78 100 l12 4 l-4 11 l-11 -5 Z" fill="#8ec5ff" stroke="#6ba7ea" stroke-width="3" stroke-linejoin="round"/>
+</g></svg>
